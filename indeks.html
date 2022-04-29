@@ -17,6 +17,8 @@
         // randomly returns either ‘Rock’, ‘Paper’ or ‘Scissors’
 
         function Play(playerSelection, computerSelection) {
+            let playerSelection = playerSelection.toUpperCase();
+            let computerSelection = computerSelection.toUpperCase();
 
             if (playerSelection === computerSelection) {
                 return "It's a tie!";
