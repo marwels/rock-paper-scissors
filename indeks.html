@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <title>Rock Paper Scissors</title>
 </head>
 
 <body>
     <script>
 
         function computerPlay() {
-            let choices = ["rock", "paper", "scissors"];
+            let choices = ["Rock", "Paper", "Scissors"];
             const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+            console.log(randomChoice);
 
         }
 // randomly returns either ‘Rock’, ‘Paper’ or ‘Scissors’
