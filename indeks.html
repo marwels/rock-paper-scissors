@@ -36,13 +36,15 @@
                 return "You Win! Scissors beats Paper";
             } else { return "You have to choose 'Rock', 'Paper' or 'Scissors'" }
         }
-        let playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
 
         function game() {
             let score = 0;
             console.log("5 round game")
             for (let i = 1; i <= 5; i++) {
+                const computerSelection = computerPlay();
+                let playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
                 let gameResult = playRound(playerSelection, computerSelection);
+
                 if (gameResult === "It's a tie!") {
                     console.log("You get 0 points.");
                     console.log("Totoal: " + score + " points");
