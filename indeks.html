@@ -34,9 +34,29 @@
                 return "You Lose! Rock beats Scissors";
             } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
                 return "You Win! Scissors beats Paper";
-            } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-                return "You Lose! Paper beats Rock";
             } else { return "You have to choose 'Rock', 'Paper' or 'Scissors'" }
+        }
+
+        function game() {
+            for (let i = 1; i <= 5; i++) {
+                let gameResult = playRound(playerSelection, computerSelection);
+                let score = 0;
+                if (gameResult === "It's a tie!") {
+                    console.log("You get 0 points.");
+                    console.log(score);
+                } else if (gameResult === "You Lose! Paper beats Rock" ||
+                    gameResult === "You Lose! Scissors beats Paper" || gameResult === "You Lose! Rock beats Scissors" ||
+                    gameResult === "You Lose! Paper beats Rock") {
+                    console.log("You get 0 points.");
+                    console.log(score);
+                } else if (gameResult === "You Win! Rock beats Scissors" || gameResult === "You Win! Paper beats Rock" ||
+                    gameResult === "You Win! Scissors beats Paper") {
+                    console.log("You get 1 point.");
+                    score++;
+                    console.log(score);
+                }
+
+            }
         }
 
     </script>
