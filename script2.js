@@ -14,6 +14,7 @@ let computerSelection = computerPlay();
 //console.log(rndInt)
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
     playerSelection = playerSelection.toUpperCase();
 
     if (playerSelection === "ROCK") {
@@ -25,7 +26,6 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("Sorry, you've made a spelling mistake. Try again!");
     }
-
 
     if (playerSelection === computerSelection) {
         console.log("It's a tie!");
