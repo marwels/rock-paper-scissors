@@ -28,21 +28,52 @@ function playRound(playerSelection, computerSelection) {
 
 
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        console.log("It's a tie!");
+        return 0;
     } else if (playerSelection === 1 && computerSelection === 2) {
-        return "You Lose! Paper beats Rock";
+        console.log("You Lose! Paper beats Rock");
+        return 0;
     } else if (playerSelection === 1 && computerSelection === 3) {
-        return "You Win! Rock beats Scissors";
+        console.log("You Win! Rock beats Scissors");
+        return 1;
     } else if (playerSelection === 2 && computerSelection === 1) {
-        return "You Win! Paper beats Rock";
+        console.log("You Win! Paper beats Rock");
+        return 1;
     } else if (playerSelection === 2 && computerSelection === 3) {
-        return "You Lose! Scissors beats Paper";
+        console.log("You Lose! Scissors beats Paper");
+        return 0;
     } else if (playerSelection === 3 && computerSelection === 1) {
-        return "You Lose! Rock beats Scissors";
+        console.log("You Lose! Rock beats Scissors");
+        return 0;
     } else if (playerSelection === 3 && computerSelection === 2) {
-        return "You Win! Scissors beats Paper";
-    } else { return "You have to choose 'Rock', 'Paper' or 'Scissors'" }
+        console.log("You Win! Scissors beats Paper");
+        return 1;
+    } else {
+        console.log("You have to choose 'Rock', 'Paper' or 'Scissors'");
+        return 0
+    }
 }
 
 
+function game() {
+    let score = 0;
+    console.log("It is a 5 round game")
+    for (let i = 1; i <= 5; i++) {
+        let playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
+        let gameResult = playRound(playerSelection, computerSelection);
+
+        if (gameResult === 0) {
+            console.log("You get 0 points.");
+            console.log("Totoal: " + score + " points");
+        } else if (gameResult === 1) {
+            console.log("You get 1 point.");
+            score++;
+            console.log("Totoal: " + score + " points");
+        } else {
+            console.log("Sorry, something is wrong");
+        }
+
+
+    }
+}
 
