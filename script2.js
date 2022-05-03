@@ -39,22 +39,22 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's a tie!");
         return 0;
-    } else if (playerSelection === 1 && computerSelection === 2) {
+    } else if (playerSelection === rock && computerSelection === paper) {
         console.log("You Lose! Paper beats Rock");
         return 0;
-    } else if (playerSelection === 1 && computerSelection === 3) {
+    } else if (playerSelection === rock && computerSelection === scissors) {
         console.log("You Win! Rock beats Scissors");
         return 1;
-    } else if (playerSelection === 2 && computerSelection === 1) {
+    } else if (playerSelection === paper && computerSelection === rock) {
         console.log("You Win! Paper beats Rock");
         return 1;
-    } else if (playerSelection === 2 && computerSelection === 3) {
+    } else if (playerSelection === paper && computerSelection === scissors) {
         console.log("You Lose! Scissors beats Paper");
         return 0;
-    } else if (playerSelection === 3 && computerSelection === 1) {
+    } else if (playerSelection === scissors && computerSelection === rock) {
         console.log("You Lose! Rock beats Scissors");
         return 0;
-    } else if (playerSelection === 3 && computerSelection === 2) {
+    } else if (playerSelection === scissors && computerSelection === paper) {
         console.log("You Win! Scissors beats Paper");
         return 1;
     } else {
