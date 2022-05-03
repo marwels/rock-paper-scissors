@@ -1,11 +1,17 @@
 function computerPlay() {
-    return Math.floor(Math.random() * (3 - 1 + 1) + 1);
-    // randomly returns either 1, 2 or 3
-    //1 rock
-    //2 paper
-    //3 scissors
+    let comp = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+    // randomly returns either 1, 2 or 3;
+    if (comp = 1) {
+        return rock;
+    } else if (comp = 2) {
+        return paper;
+    } else { return scissors; }
 }
+
 let computerSelection = computerPlay();
+const rock = 1;
+const paper = 2;
+const scissors = 3;
 
 //function randomIntFromInterval(min, max) { // min and max included 
 //    return Math.floor(Math.random() * (max - min + 1) + min)
@@ -19,11 +25,11 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
 
     if (playerSelection === "ROCK") {
-        playerSelection = 1;
+        playerSelection = rock;
     } else if (playerSelection === "PAPER") {
-        playerSelection = 2;
+        playerSelection = paper;
     } else if (playerSelection === "SCISSORS") {
-        playerSelection = 3;
+        playerSelection = scissors;
     } else {
         console.log("Sorry, you've made a spelling mistake. Try again!");
     }
