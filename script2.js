@@ -1,3 +1,7 @@
+const rock = 1;
+const paper = 2;
+const scissors = 3;
+
 function computerPlay() {
     let comp = Math.floor(Math.random() * (3 - 1 + 1) + 1);
     // randomly returns either 1, 2 or 3;
@@ -9,9 +13,7 @@ function computerPlay() {
 }
 
 let computerSelection = computerPlay();
-const rock = 1;
-const paper = 2;
-const scissors = 3;
+
 
 //function randomIntFromInterval(min, max) { // min and max included 
 //    return Math.floor(Math.random() * (max - min + 1) + min)
