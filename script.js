@@ -28,32 +28,29 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     let score = 0;
-    console.log("5 round game")
-    for (let i = 1; i <= 5; i++) {
-        const computerSelection = computerPlay();
-        let playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
-        let gameResult = playRound(playerSelection, computerSelection);
+    const computerSelection = computerPlay();
+    let playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
+    let gameResult = playRound(playerSelection, computerSelection);
 
-        if (gameResult === "It's a tie!") {
-            console.log(gameResult);
-            console.log("You get 0 points.");
-            console.log("Totoal: " + score + " points");
-        } else if (gameResult === "You Lose! Paper beats Rock" ||
-            gameResult === "You Lose! Scissors beats Paper" || gameResult === "You Lose! Rock beats Scissors" ||
-            gameResult === "You Lose! Paper beats Rock") {
-            console.log(gameResult);
-            console.log("You get 0 points.");
-            console.log("Totoal: " + score + " points");
-        } else if (gameResult === "You Win! Rock beats Scissors" || gameResult === "You Win! Paper beats Rock" ||
-            gameResult === "You Win! Scissors beats Paper") {
-            console.log("You get 1 point.");
-            console.log(gameResult);
-            score++;
-            console.log("Totoal: " + score + " points");
-        } else {
-            console.log("Sorry, something is wrong");
-        }
-
-
+    if (gameResult === "It's a tie!") {
+        console.log(gameResult);
+        console.log("You get 0 points.");
+        console.log("Totoal: " + score + " points");
+    } else if (gameResult === "You Lose! Paper beats Rock" ||
+        gameResult === "You Lose! Scissors beats Paper" || gameResult === "You Lose! Rock beats Scissors" ||
+        gameResult === "You Lose! Paper beats Rock") {
+        console.log(gameResult);
+        console.log("You get 0 points.");
+        console.log("Totoal: " + score + " points");
+    } else if (gameResult === "You Win! Rock beats Scissors" || gameResult === "You Win! Paper beats Rock" ||
+        gameResult === "You Win! Scissors beats Paper") {
+        console.log("You get 1 point.");
+        console.log(gameResult);
+        score++;
+        console.log("Totoal: " + score + " points");
+    } else {
+        console.log("Sorry, something is wrong");
     }
+
+
 }
