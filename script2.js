@@ -22,21 +22,8 @@ let computerSelection = computerPlay();
 //console.log(rndInt)
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
-    playerSelection = playerSelection.toUpperCase();
     computerSelection = computerPlay();
 
-    if (playerSelection === "ROCK") {
-        playerSelection = rock;
-    } else if (playerSelection === "PAPER") {
-        playerSelection = paper;
-    } else if (playerSelection === "SCISSORS") {
-        playerSelection = scissors;
-    } else {
-        console.log("Sorry, you've made a spelling mistake. Try again!");
-    }
-    // console.log("playerSelection = " + playerSelection);
-    // console.log("computerSelection = " + computerSelection);
 
     if (playerSelection === computerSelection) {
         console.log("It's a tie!");
@@ -91,6 +78,8 @@ function game() {
 const rockButton = document.getElementById("rock");
 rockButton.addEventListener("click", function () {
     this.style.backgroundColor = "red";
+    playRound(playerSelection = rock, computerSelection);
+
 
 })
 
