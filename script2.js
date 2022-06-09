@@ -1,6 +1,7 @@
 const rock = 1;
 const paper = 2;
 const scissors = 3;
+let count = 0;
 
 function computerPlay() {
     let comp = Math.floor(Math.random() * (3 - 1 + 1) + 1);
@@ -21,8 +22,23 @@ let computerSelection = computerPlay();
 //const rndInt = randomIntFromInterval(1, 6)
 //console.log(rndInt)
 
+
 function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
+    count++;
+
+    if (count === 5) {
+        let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
+        buttonsToRemoveAfterGame.forEach(button => {
+            button.remove();
+        })
+        information.innerText = "It was last round";
+    }
+
+
+    const information2 = document.createElement("div");
+    information2.classList.add("information");
+    document.body.appendChild(information2);
 
     if (playerSelection === computerSelection) {
         information2.innerText = "It's a tie!";
@@ -55,6 +71,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     startGameButton.innerText = "Start New Game";
+    count = 0;
 
     const rockButton = document.createElement("button");
     rockButton.setAttribute("id", "rock");
@@ -68,7 +85,7 @@ function game() {
 
     const paperButton = document.createElement("button");
     paperButton.setAttribute("id", "paper");
-    rockButton.classList.add("answer");
+    paperButton.classList.add("answer");
     paperButton.addEventListener("click", function () {
         this.style.backgroundColor = "red";
         playRound(playerSelection = paper, computerSelection);
@@ -79,7 +96,7 @@ function game() {
 
     const scissorsButton = document.createElement("button");
     scissorsButton.setAttribute("id", "scissors");
-    rockButton.classList.add("answer");
+    scissorsButton.classList.add("answer");
     scissorsButton.addEventListener("click", function () {
         this.style.backgroundColor = "red";
         playRound(playerSelection = scissors, computerSelection);
@@ -89,17 +106,6 @@ function game() {
 
     let score = 0;
 
-    const information = document.createElement("div");
-    information.classList.add("information");
-    information.innerText = "It is a 5 round game";
-    document.body.appendChild(information);
-
-    const information2 = document.createElement("div");
-    information2.classList.add("information");
-    document.body.appendChild(information2);
-
-
-
     const scoreDiv = document.createElement("div");
     scoreDiv.classList.add("score");
     scoreDiv.innerText = "Total score: " + score + " points";
@@ -107,28 +113,28 @@ function game() {
 
 
 
-    for (let i = 1; i <= 5; i++) {
+    // for (let i = 1; i <= 5; i++) {
 
-        let gameResult = playRound(playerSelection, computerSelection);
+    //     let gameResult = playRound(playerSelection, computerSelection);
 
-        if (gameResult === 0) {
-            scoreDiv.innerText = "Total score: " + score + " points";
-            information.innerText = "You get 0 points.";
+    //     if (gameResult === 0) {
+    //         scoreDiv.innerText = "Total score: " + score + " points";
+    //         information.innerText = "You get 0 points.";
 
-        } else if (gameResult === 1) {
-            information.innerText = "You get 1 point.";
-            score++;
-            scoreDiv.innerText = "Total score: " + score + " points";
-        } else {
-            information.innerText = "Sorry, something is wrong";
-        }
-        if (i === 5) {
-            let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
-            buttonsToRemoveAfterGame.remove();
-            //does not work...
-        }
+    //     } else if (gameResult === 1) {
+    //         information.innerText = "You get 1 point.";
+    //         score++;
+    //         scoreDiv.innerText = "Total score: " + score + " points";
+    //     } else {
+    //         information.innerText = "Sorry, something is wrong";
+    //     }
+    //     if (i === 5) {
+    //         
+    //         })
+    //         //does not work...
+    //     }
 
-    }
+    // }
 }
 
 
@@ -137,3 +143,8 @@ startGameButton.addEventListener("click", function () {
     this.style.backgroundColor = "red";
     game();
 })
+
+const information = document.createElement("div");
+information.classList.add("information");
+information.innerText = "It is a 5 round game";
+document.body.appendChild(information);
