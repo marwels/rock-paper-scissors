@@ -24,7 +24,6 @@ let computerSelection = computerPlay();
 function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
 
-
     if (playerSelection === computerSelection) {
         console.log("It's a tie!");
         return 0;
@@ -50,6 +49,7 @@ function playRound(playerSelection, computerSelection) {
         console.log("You have to choose 'Rock', 'Paper' or 'Scissors'");
         return 0
     }
+
 }
 
 
@@ -79,18 +79,16 @@ const rockButton = document.getElementById("rock");
 rockButton.addEventListener("click", function () {
     this.style.backgroundColor = "red";
     playRound(playerSelection = rock, computerSelection);
-
-
 })
 
 const paperButton = document.getElementById("paper");
 paperButton.addEventListener("click", function () {
     this.style.backgroundColor = "red";
-
+    playRound(playerSelection = paper, computerSelection);
 })
 
 const scissorsButton = document.getElementById("scissors");
 scissorsButton.addEventListener("click", function () {
     this.style.backgroundColor = "red";
-
+    playRound(playerSelection = scissors, computerSelection);
 })
