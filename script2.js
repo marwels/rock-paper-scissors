@@ -58,6 +58,7 @@ function game() {
 
     const rockButton = document.createElement("button");
     rockButton.setAttribute("id", "rock");
+    rockButton.classList.add("answer");
     rockButton.addEventListener("click", function () {
         this.style.backgroundColor = "red";
         playRound(playerSelection = rock, computerSelection);
@@ -67,6 +68,7 @@ function game() {
 
     const paperButton = document.createElement("button");
     paperButton.setAttribute("id", "paper");
+    rockButton.classList.add("answer");
     paperButton.addEventListener("click", function () {
         this.style.backgroundColor = "red";
         playRound(playerSelection = paper, computerSelection);
@@ -77,6 +79,7 @@ function game() {
 
     const scissorsButton = document.createElement("button");
     scissorsButton.setAttribute("id", "scissors");
+    rockButton.classList.add("answer");
     scissorsButton.addEventListener("click", function () {
         this.style.backgroundColor = "red";
         playRound(playerSelection = scissors, computerSelection);
@@ -88,13 +91,13 @@ function game() {
 
     const rulesDiv = document.createElement("div");
     rulesDiv.setAttribute("id", "rules");
-    document.body.appendChild(rulesDiv);
     scoreDiv.innerText = "It is a 5 round game";
+    document.body.appendChild(rulesDiv);
 
     const scoreDiv = document.createElement("div");
     scoreDiv.setAttribute("id", "score");
+    scoreDiv.innerText = "Total score: " + score + " points";
     document.body.appendChild(scoreDiv);
-    scoreDiv.innerText = "Score: " + score;
 
 
 
@@ -103,16 +106,20 @@ function game() {
         let gameResult = playRound(playerSelection, computerSelection);
 
         if (gameResult === 0) {
+            scoreDiv.innerText = "Total score: " + score + " points";
             console.log("You get 0 points.");
-            console.log("Totoal: " + score + " points");
+
         } else if (gameResult === 1) {
             console.log("You get 1 point.");
             score++;
-            console.log("Totoal: " + score + " points");
+            scoreDiv.innerText = "Total score: " + score + " points";
         } else {
-            console.log("Sorry, something is wrong");
+            scoreDiv.innerText = "Sorry, something is wrong";
         }
-
+        if (i === 5) {
+            let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
+            buttonsToRemoveAfterGame.remove();
+        }
 
     }
 }
