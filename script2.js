@@ -54,6 +54,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
+
     let score = 0;
     console.log("It is a 5 round game")
     for (let i = 1; i <= 5; i++) {
@@ -91,4 +92,10 @@ const scissorsButton = document.getElementById("scissors");
 scissorsButton.addEventListener("click", function () {
     this.style.backgroundColor = "red";
     playRound(playerSelection = scissors, computerSelection);
+})
+
+const startGameButton = document.getElementById("start");
+startGameButton.addEventListener("click", function () {
+    this.style.backgroundColor = "red";
+    game();
 })
