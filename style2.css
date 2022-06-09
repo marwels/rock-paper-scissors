@@ -1,3 +1,7 @@
 body {
 background: teal;
 }
+
+.information, .score {
+    background-color: blanchedalmond;
+}

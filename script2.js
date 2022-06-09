@@ -89,13 +89,19 @@ function game() {
 
     let score = 0;
 
-    const rulesDiv = document.createElement("div");
-    rulesDiv.setAttribute("id", "rules");
-    scoreDiv.innerText = "It is a 5 round game";
-    document.body.appendChild(rulesDiv);
+    const information = document.createElement("div");
+    information.classList.add("information");
+    information.innerText = "It is a 5 round game";
+    document.body.appendChild(information);
+
+    const information2 = document.createElement("div");
+    information2.classList.add("information");
+    document.body.appendChild(information2);
+
+
 
     const scoreDiv = document.createElement("div");
-    scoreDiv.setAttribute("id", "score");
+    scoreDiv.classList.add("score");
     scoreDiv.innerText = "Total score: " + score + " points";
     document.body.appendChild(scoreDiv);
 
@@ -107,14 +113,14 @@ function game() {
 
         if (gameResult === 0) {
             scoreDiv.innerText = "Total score: " + score + " points";
-            console.log("You get 0 points.");
+            information.innerText = "You get 0 points.";
 
         } else if (gameResult === 1) {
-            console.log("You get 1 point.");
+            information.innerText = "You get 1 point.";
             score++;
             scoreDiv.innerText = "Total score: " + score + " points";
         } else {
-            scoreDiv.innerText = "Sorry, something is wrong";
+            information.innerText = "Sorry, something is wrong";
         }
         if (i === 5) {
             let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
