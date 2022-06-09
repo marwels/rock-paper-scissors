@@ -54,11 +54,52 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
+    startGameButton.innerText = "Start New Game";
+
+    const rockButton = document.createElement("button");
+    rockButton.setAttribute("id", "rock");
+    rockButton.addEventListener("click", function () {
+        this.style.backgroundColor = "red";
+        playRound(playerSelection = rock, computerSelection);
+    })
+    rockButton.innerText = "Rock";
+    document.body.appendChild(rockButton);
+
+    const paperButton = document.createElement("button");
+    paperButton.setAttribute("id", "paper");
+    paperButton.addEventListener("click", function () {
+        this.style.backgroundColor = "red";
+        playRound(playerSelection = paper, computerSelection);
+    })
+    paperButton.innerText = "Paper";
+    document.body.appendChild(paperButton);
+
+
+    const scissorsButton = document.createElement("button");
+    scissorsButton.setAttribute("id", "scissors");
+    scissorsButton.addEventListener("click", function () {
+        this.style.backgroundColor = "red";
+        playRound(playerSelection = scissors, computerSelection);
+    })
+    scissorsButton.innerText = "Scissors";
+    document.body.appendChild(scissorsButton);
 
     let score = 0;
-    console.log("It is a 5 round game")
+
+    const rulesDiv = document.createElement("div");
+    rulesDiv.setAttribute("id", "rules");
+    document.body.appendChild(rulesDiv);
+    scoreDiv.innerText = "It is a 5 round game";
+
+    const scoreDiv = document.createElement("div");
+    scoreDiv.setAttribute("id", "score");
+    document.body.appendChild(scoreDiv);
+    scoreDiv.innerText = "Score: " + score;
+
+
+
     for (let i = 1; i <= 5; i++) {
-        let playerSelection = prompt("Tipe your choice: rock, paper or scissors", "");
+
         let gameResult = playRound(playerSelection, computerSelection);
 
         if (gameResult === 0) {
@@ -76,23 +117,6 @@ function game() {
     }
 }
 
-const rockButton = document.getElementById("rock");
-rockButton.addEventListener("click", function () {
-    this.style.backgroundColor = "red";
-    playRound(playerSelection = rock, computerSelection);
-})
-
-const paperButton = document.getElementById("paper");
-paperButton.addEventListener("click", function () {
-    this.style.backgroundColor = "red";
-    playRound(playerSelection = paper, computerSelection);
-})
-
-const scissorsButton = document.getElementById("scissors");
-scissorsButton.addEventListener("click", function () {
-    this.style.backgroundColor = "red";
-    playRound(playerSelection = scissors, computerSelection);
-})
 
 const startGameButton = document.getElementById("start");
 startGameButton.addEventListener("click", function () {
