@@ -25,29 +25,29 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
 
     if (playerSelection === computerSelection) {
-        console.log("It's a tie!");
+        information2.innerText = "It's a tie!";
         return 0;
     } else if (playerSelection === rock && computerSelection === paper) {
-        console.log("You Lose! Paper beats Rock");
+        information2.innerText = "You Lose! Paper beats Rock";
         return 0;
     } else if (playerSelection === rock && computerSelection === scissors) {
-        console.log("You Win! Rock beats Scissors");
+        information2.innerText = "You Win! Rock beats Scissors";
         return 1;
     } else if (playerSelection === paper && computerSelection === rock) {
-        console.log("You Win! Paper beats Rock");
+        information2.innerText = "You Win! Paper beats Rock";
         return 1;
     } else if (playerSelection === paper && computerSelection === scissors) {
-        console.log("You Lose! Scissors beats Paper");
+        information2.innerText = "You Lose! Scissors beats Paper";
         return 0;
     } else if (playerSelection === scissors && computerSelection === rock) {
-        console.log("You Lose! Rock beats Scissors");
+        information2.innerText = "You Lose! Rock beats Scissors";
         return 0;
     } else if (playerSelection === scissors && computerSelection === paper) {
-        console.log("You Win! Scissors beats Paper");
+        information2.innerText = "You Win! Scissors beats Paper";
         return 1;
     } else {
-        console.log("You have to choose 'Rock', 'Paper' or 'Scissors'");
-        return 0
+        information2.innerText = "You have to choose 'Rock', 'Paper' or 'Scissors'";
+        return 0;
     }
 
 }
@@ -125,6 +125,7 @@ function game() {
         if (i === 5) {
             let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
             buttonsToRemoveAfterGame.remove();
+            //does not work...
         }
 
     }
