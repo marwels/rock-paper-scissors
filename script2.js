@@ -5,9 +5,9 @@ const scissors = 3;
 function computerPlay() {
     let comp = Math.floor(Math.random() * (3 - 1 + 1) + 1);
     // randomly returns either 1, 2 or 3;
-    if (comp = 1) {
+    if (comp === 1) {
         return rock;
-    } else if (comp = 2) {
+    } else if (comp === 2) {
         return paper;
     } else { return scissors; }
 }
