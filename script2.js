@@ -88,3 +88,20 @@ function game() {
     }
 }
 
+const rockButton = document.getElementById("rock");
+rockButton.addEventListener("click", function () {
+    this.style.backgroundColor = "red";
+
+})
+
+const paperButton = document.getElementById("paper");
+paperButton.addEventListener("click", function () {
+    this.style.backgroundColor = "red";
+
+})
+
+const scissorsButton = document.getElementById("scissors");
+scissorsButton.addEventListener("click", function () {
+    this.style.backgroundColor = "red";
+
+})
