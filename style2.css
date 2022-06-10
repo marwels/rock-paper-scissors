@@ -1,7 +1,20 @@
-body {
-background: teal;
-}
-
 .information, .score {
     background-color: blanchedalmond;
 }
+
+
+body, html {
+  height: 100%;
+}
+
+body {
+      /* The image used */
+      background-image: url("rock-paper-scissors-seamless-pattern.jpg");
+      /* Full height */
+      height: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+

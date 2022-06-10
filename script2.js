@@ -114,7 +114,6 @@ function game() {
     scissorsButton.setAttribute("id", "scissors");
     scissorsButton.classList.add("answer");
     scissorsButton.addEventListener("click", function () {
-        this.style.backgroundColor = "red";
         playRound(playerSelection = scissors, computerSelection);
     })
     scissorsButton.innerText = "Scissors";
