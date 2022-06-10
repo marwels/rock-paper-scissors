@@ -23,16 +23,17 @@ body {
     border: solid black;
     border-radius: 20px;
     width: 80%;
+    padding: 50px;
     display: block;
     margin: 50px auto auto auto;
-    
+
     }
 
 h1 {
     background-color: black;
     color: whitesmoke;
     text-align: center;
-    font-size: 100px;
+    font-size: 90px;
     display: block;
     margin-left: auto;
     margin-right: auto
@@ -40,8 +41,7 @@ h1 {
 
 button#start {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto;
     background-color: red;
     color: whitesmoke;
     font-size: 90px;
@@ -50,6 +50,7 @@ button#start {
     -webkit-box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
     -moz-box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
     box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
+    padding: 0 15px;
 }
 
 h1, button {
