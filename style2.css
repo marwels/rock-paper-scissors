@@ -18,14 +18,14 @@ body {
       background-size: cover;
     }
 
-    #blackBox {
-        background-color: black;
-        border: solid black;
+#blackBox {
+    background-color: black;
+    border: solid black;
     border-radius: 20px;
     width: 80%;
-    height: 80%;
     display: block;
-    margin: 50px auto;
+    margin: 50px auto auto auto;
+    
     }
 
 h1 {
@@ -36,5 +36,24 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto
+}
 
+button#start {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    color: whitesmoke;
+    font-size: 90px;
+    border: solid red;
+    border-radius: 20px;
+    -webkit-box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
+    -moz-box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
+    box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
+}
+
+h1, button {
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Baloo 2', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
