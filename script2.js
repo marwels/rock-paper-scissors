@@ -78,6 +78,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     startGameButton.innerText = "Start New Game";
     startGameButton.classList.add("startNewGame");
+    startGameButton.classList.remove("start");
 
     let h1ToDelete = document.querySelector("h1");
     h1ToDelete.remove();
@@ -93,7 +94,7 @@ function game() {
         button.remove();
     })
 
-    document.body.appendChild(information);
+    blackBox.appendChild(information);
 
     const rockButton = document.createElement("button");
     rockButton.setAttribute("id", "rock");
@@ -103,7 +104,7 @@ function game() {
     })
     //ja to ładniej zapisac?
     rockButton.innerText = "Rock";
-    document.body.appendChild(rockButton);
+    blackBox.appendChild(rockButton);
 
     const paperButton = document.createElement("button");
     paperButton.setAttribute("id", "paper");
@@ -112,7 +113,7 @@ function game() {
         playRound(playerSelection = paper, computerSelection);
     })
     paperButton.innerText = "Paper";
-    document.body.appendChild(paperButton);
+    blackBox.appendChild(paperButton);
 
 
     const scissorsButton = document.createElement("button");
@@ -122,10 +123,10 @@ function game() {
         playRound(playerSelection = scissors, computerSelection);
     })
     scissorsButton.innerText = "Scissors";
-    document.body.appendChild(scissorsButton);
+    blackBox.appendChild(scissorsButton);
 
-    document.body.appendChild(information2);
-    document.body.appendChild(scoreDiv);
+    blackBox.appendChild(information2);
+    blackBox.appendChild(scoreDiv);
 }
 
 const startGameButton = document.querySelector("button.start");
@@ -144,4 +145,6 @@ information2.classList.add("information");
 const scoreDiv = document.createElement("div");
 scoreDiv.classList.add("score");
 scoreDiv.innerText = "Total score: " + score + " points";
+
+const blackBox = document.getElementById("blackBox");
 

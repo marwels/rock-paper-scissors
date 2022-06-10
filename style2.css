@@ -61,15 +61,14 @@ h1, button {
 
 button.startNewGame {
     display: block;
-
-    margin: 20px auto;
+    margin-left: auto;
     background-color: red;
     color: whitesmoke;
-    font-size: 90px;
+    font-size: 30px;
     border: solid red;
-    border-radius: 20px;
+    border-radius: 10px;
     -webkit-box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
     -moz-box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
     box-shadow: 23px 22px 30px -17px rgba(121, 120, 132, 1);
-    padding: 0 15px;
+    padding: 0 10px;
 }
