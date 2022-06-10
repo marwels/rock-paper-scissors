@@ -35,6 +35,7 @@ function playRound(playerSelection, computerSelection) {
             button.remove();
         })
         information.innerText = "It was last round!";
+        score = 0;
     }
 
 
@@ -77,6 +78,12 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     startGameButton.innerText = "Start New Game";
     count = 0;
+    let divsToDelete = document.querySelectorAll("div.information");
+    divsToDelete.forEach(div => {
+        div.remove();
+    });
+
+    document.body.appendChild(information);
 
     const rockButton = document.createElement("button");
     rockButton.setAttribute("id", "rock");
@@ -109,39 +116,9 @@ function game() {
     scissorsButton.innerText = "Scissors";
     document.body.appendChild(scissorsButton);
 
-
-
-    const scoreDiv = document.createElement("div");
-    scoreDiv.classList.add("score");
-    scoreDiv.innerText = "Total score: " + score + " points";
+    document.body.appendChild(information2);
     document.body.appendChild(scoreDiv);
-
-
-
-    // for (let i = 1; i <= 5; i++) {
-
-    //     let gameResult = playRound(playerSelection, computerSelection);
-
-    //     if (gameResult === 0) {
-    //         scoreDiv.innerText = "Total score: " + score + " points";
-    //         information.innerText = "You get 0 points.";
-
-    //     } else if (gameResult === 1) {
-    //         information.innerText = "You get 1 point.";
-    //         score++;
-    //         scoreDiv.innerText = "Total score: " + score + " points";
-    //     } else {
-    //         information.innerText = "Sorry, something is wrong";
-    //     }
-    //     if (i === 5) {
-    //         
-    //         })
-    //         //does not work...
-    //     }
-
-    // }
 }
-
 
 const startGameButton = document.getElementById("start");
 startGameButton.addEventListener("click", function () {
@@ -156,8 +133,10 @@ information.classList.add("information");
 information.innerText = "It is a 5 round game";
 document.body.appendChild(information);
 
-
 const information2 = document.createElement("div");
 information2.classList.add("information");
-document.body.appendChild(information2);
+
+const scoreDiv = document.createElement("div");
+scoreDiv.classList.add("score");
+scoreDiv.innerText = "Total score: " + score + " points";
 
