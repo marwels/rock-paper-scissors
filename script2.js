@@ -76,12 +76,15 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
+    console.log("game")
     startGameButton.innerText = "Start New Game";
     startGameButton.classList.add("startNewGame");
     startGameButton.classList.remove("start");
 
-    let h1ToDelete = document.querySelector("h1");
-    h1ToDelete.remove();
+    // let h1ToDelete = document.querySelector("h1");
+    // if (h1ToDelete) {
+    //     h1ToDelete.remove();
+    // }
 
     count = 0;
     let divsToDelete = document.querySelectorAll("div.information");
@@ -131,7 +134,6 @@ function game() {
 
 const startGameButton = document.querySelector("button.start");
 startGameButton.addEventListener("click", game);
-
 
 
 const information = document.createElement("div");

@@ -1,5 +1,11 @@
 .information, .score {
-    background-color: blanchedalmond;
+    background-color: black;
+    display: block;
+    color: whitesmoke;
+    font-size: 30px;
+    margin: 14px auto;
+/* chciałabym to wyśrodkować */
+
 }
 
 
@@ -53,7 +59,7 @@ button.start {
     padding: 0 15px;
 }
 
-h1, button {
+h1, button, .information, .score {
     font-family: 'Alfa Slab One', cursive;
     font-family: 'Baloo 2', cursive;
     font-family: 'Montserrat', sans-serif;
