@@ -128,7 +128,7 @@ function game() {
     document.body.appendChild(scoreDiv);
 }
 
-const startGameButton = document.getElementById("start");
+const startGameButton = document.querySelector("button.start");
 startGameButton.addEventListener("click", game);
 
 
