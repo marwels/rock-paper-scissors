@@ -83,15 +83,20 @@ function game() {
         div.remove();
     });
 
+    let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
+    buttonsToRemoveAfterGame.forEach(button => {
+        button.remove();
+    })
+
     document.body.appendChild(information);
 
     const rockButton = document.createElement("button");
     rockButton.setAttribute("id", "rock");
     rockButton.classList.add("answer");
     rockButton.addEventListener("click", function () {
-        this.style.backgroundColor = "red";
         playRound(playerSelection = rock, computerSelection);
     })
+    //ja to ładniej zapisac?
     rockButton.innerText = "Rock";
     document.body.appendChild(rockButton);
 
@@ -99,7 +104,6 @@ function game() {
     paperButton.setAttribute("id", "paper");
     paperButton.classList.add("answer");
     paperButton.addEventListener("click", function () {
-        this.style.backgroundColor = "red";
         playRound(playerSelection = paper, computerSelection);
     })
     paperButton.innerText = "Paper";
@@ -121,10 +125,7 @@ function game() {
 }
 
 const startGameButton = document.getElementById("start");
-startGameButton.addEventListener("click", function () {
-    this.style.backgroundColor = "red";
-    game();
-})
+startGameButton.addEventListener("click", game);
 
 
 
