@@ -77,6 +77,11 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     startGameButton.innerText = "Start New Game";
+    startGameButton.classList.add("startNewGame");
+
+    let h1ToDelete = document.querySelector("h1");
+    h1ToDelete.remove();
+
     count = 0;
     let divsToDelete = document.querySelectorAll("div.information");
     divsToDelete.forEach(div => {
@@ -131,7 +136,7 @@ startGameButton.addEventListener("click", game);
 const information = document.createElement("div");
 information.classList.add("information");
 information.innerText = "It is a 5 round game";
-document.body.appendChild(information);
+
 
 const information2 = document.createElement("div");
 information2.classList.add("information");
