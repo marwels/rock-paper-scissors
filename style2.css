@@ -83,3 +83,20 @@ button.startNewGame {
     display: flex;
     justify-content: center;
 }
+
+button.answer {
+    font-size: 50px;
+    padding: 25px;
+    margin: 10px;
+    border: solid;
+  transition: border-radius 1s ease-out;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite both alternate;
+  background-color: rgba(255, 238, 0, 0.877);
+}
+  
+
+@keyframes morph {
+  0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
+  100% {border-radius: 40% 60%;} 
+}
