@@ -98,6 +98,10 @@ function game() {
 
     blackBox.appendChild(information);
 
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.classList.add("buttonsContainer");
+    blackBox.appendChild(buttonsContainer);
+
     const rockButton = document.createElement("button");
     rockButton.setAttribute("id", "rock");
     rockButton.classList.add("answer");
@@ -106,7 +110,7 @@ function game() {
     })
     //ja to ładniej zapisac?
     rockButton.innerText = "Rock";
-    blackBox.appendChild(rockButton);
+    buttonsContainer.appendChild(rockButton);
 
     const paperButton = document.createElement("button");
     paperButton.setAttribute("id", "paper");
@@ -115,7 +119,7 @@ function game() {
         playRound(playerSelection = paper, computerSelection);
     })
     paperButton.innerText = "Paper";
-    blackBox.appendChild(paperButton);
+    buttonsContainer.appendChild(paperButton);
 
 
     const scissorsButton = document.createElement("button");
@@ -125,9 +129,10 @@ function game() {
         playRound(playerSelection = scissors, computerSelection);
     })
     scissorsButton.innerText = "Scissors";
-    blackBox.appendChild(scissorsButton);
+    buttonsContainer.appendChild(scissorsButton);
 
-    blackBox.appendChild(information2);
+    blackBox.appendChild(information2Container);
+    information2Container.appendChild(information2);
     blackBox.appendChild(scoreDiv);
 }
 
@@ -139,6 +144,8 @@ const information = document.createElement("div");
 information.classList.add("information");
 information.innerText = "It is a 5 round game";
 
+const information2Container = document.createElement("div");
+information2Container.classList.add("information2Container");
 
 const information2 = document.createElement("div");
 information2.classList.add("information");
