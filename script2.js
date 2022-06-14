@@ -81,10 +81,9 @@ function game() {
     startGameButton.classList.add("startNewGame");
     startGameButton.classList.remove("start");
 
-    // let h1ToDelete = document.querySelector("h1");
-    // if (h1ToDelete) {
-    //     h1ToDelete.remove();
-    // }
+    let h1ToDelete = document.getElementById("title");
+    h1ToDelete.remove();
+
 
     count = 0;
     let divsToDelete = document.querySelectorAll("div.information");
