@@ -23,25 +23,10 @@ let computerSelection = computerPlay();
 //const rndInt = randomIntFromInterval(1, 6)
 //console.log(rndInt)
 
-
 function playRound(playerSelection, computerSelection) {
-    computerSelection = computerPlay();
-    count++;
-
-
-    if (count === 5) {
-        let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
-        buttonsToRemoveAfterGame.forEach(button => {
-            button.remove();
-        })
-        information.innerText = "It was last round!";
-        score = 0;
-    }
-
-
-
     if (playerSelection === computerSelection) {
         information2.innerText = "It's a tie!";
+        // return [true, 0, "It's a tie"];
         return;
     } else if (playerSelection === rock && computerSelection === paper) {
         information2.innerText = "You Lose! Paper beats Rock";
@@ -71,7 +56,24 @@ function playRound(playerSelection, computerSelection) {
         information2.innerText = "You have to choose 'Rock', 'Paper' or 'Scissors'";
         return;
     }
+}
 
+
+function onUserChoice(playerSelection, computerSelection) {
+    computerSelection = computerPlay();
+    count++;
+
+    playRound(playerSelection, computerSelection);
+
+    if (count === 5) {
+        let buttonsToRemoveAfterGame = document.querySelectorAll("button.answer");
+        buttonsToRemoveAfterGame.forEach(button => {
+            button.remove();
+        })
+        information.innerText = "";
+        information2.innerText += " " + "It was last round!";
+        score = 0;
+    }
 }
 
 
@@ -82,8 +84,11 @@ function game() {
     startGameButton.classList.remove("start");
 
     let h1ToDelete = document.getElementById("title");
-    h1ToDelete.remove();
+    if (h1ToDelete) {
+        h1ToDelete.remove();
+    }
 
+    information2.innerText = "";
 
     count = 0;
     let divsToDelete = document.querySelectorAll("div.information");
@@ -106,7 +111,7 @@ function game() {
     rockButton.setAttribute("id", "rock");
     rockButton.classList.add("answer");
     rockButton.addEventListener("click", function () {
-        playRound(playerSelection = rock, computerSelection);
+        onUserChoice(playerSelection = rock, computerSelection);
     })
     //ja to ładniej zapisac?
     rockButton.innerText = "Rock";
@@ -116,7 +121,7 @@ function game() {
     paperButton.setAttribute("id", "paper");
     paperButton.classList.add("answer");
     paperButton.addEventListener("click", function () {
-        playRound(playerSelection = paper, computerSelection);
+        onUserChoice(playerSelection = paper, computerSelection);
     })
     paperButton.innerText = "Paper";
     buttonsContainer.appendChild(paperButton);
@@ -126,7 +131,7 @@ function game() {
     scissorsButton.setAttribute("id", "scissors");
     scissorsButton.classList.add("answer");
     scissorsButton.addEventListener("click", function () {
-        playRound(playerSelection = scissors, computerSelection);
+        onUserChoice(playerSelection = scissors, computerSelection);
     })
     scissorsButton.innerText = "Scissors";
     buttonsContainer.appendChild(scissorsButton);
@@ -138,6 +143,9 @@ function game() {
 
 const startGameButton = document.querySelector("button.start");
 startGameButton.addEventListener("click", game);
+
+// const startGameButtonAfterChange = document.querySelector("button.startNewGame");
+// startGameButtonAfterChange.addEventListener("click", game);
 
 
 const information = document.createElement("div");
